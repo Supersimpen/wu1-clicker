@@ -122,6 +122,7 @@ h2{
 .game-currency {
     list-style: none;
     padding: 0;
+    position: right;
 }
 
 /* game-currency är en lista med list items */
