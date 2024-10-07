@@ -163,24 +163,38 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
     {
-        name: 'Sop',
+        name: 'Matbomb',
         cost: 10,
         amount: 1,
     },
     {
-        name: 'Kvalitetsspade',
+        name: 'Sous Chef',
         cost: 50,
         clicks: 2,
     },
     {
-        name: 'Skottkärra',
+        name: 'Matbombstunna',
         cost: 100,
         amount: 10,
     },
     {
-        name: 'Grävmaskin',
+        name: 'Matdrönare',
         cost: 1000,
         amount: 100,
+    },
+    {
+        name: 'Atombombs-mat',
+        cost: 10000,
+        amount: 1000,
+    },
+    {
+        name: 'Partikelbombs-mat',
+        cost: 100000,
+        amount: 10000,
+    },
+    {
+        name: 'McDonald-bomb',
+        cost: 10000000000000,
     },
 ];
 
@@ -213,14 +227,14 @@ function createCard(upgrade) {
     } else {
         header.textContent = `${upgrade.name}, +${upgrade.clicks} per klick.`;
     }
-    cost.textContent = `Köp för ${upgrade.cost} benbitar.`;
+    cost.textContent = `Köp för ${upgrade.cost} Matlådor.`;
 
     card.addEventListener('click', (e) => {
         if (money >= upgrade.cost) {
             acquiredUpgrades++;
             money -= upgrade.cost;
-            upgrade.cost *= 0.5;
-            cost.textContent = 'Köp för ' + upgrade.cost + ' benbitar';
+            upgrade.cost *= 1.25;
+            cost.textContent = 'Köp för ' + Math.round(upgrade.cost) + ' Matlådor';
             moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
             moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
             message('Grattis du har köpt en uppgradering!', 'success');
