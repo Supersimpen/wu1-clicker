@@ -42,7 +42,7 @@ audio {
 }
 
 .container {
-    width: min(80ch, 100vw - var(--space-l-xl));
+    width: 70rem;
     margin-inline: auto;
 }
 
@@ -113,10 +113,10 @@ audio {
 .game-hud {
     display: flex;
     justify-content: space-between;
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 h2{
-    margin-left: 6rem;
+    margin: 1rem;
 }
 
 .game-currency {
@@ -149,12 +149,14 @@ h2{
     background: url('../img/Button.png');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     border: 2px solid transparent;
     color: var(--color-light);
-    text-transform: uppercase;
-    font-weight: 700;
     cursor: pointer;
     margin: 2rem;
+}
+img{
+    height: fit-content;
 }
 
 #game-button:hover {
@@ -209,7 +211,8 @@ h2{
     border: 1px solid var(--color-dark-transparent);
     margin: var(--space-xs-s) 0;
     padding: var(--space-s-m) var(--space-xs-s);
-    margin-left: 6rem;
+    margin: 1rem;
+
 }
 
 .card:hover {
@@ -235,10 +238,10 @@ h2{
     50% {
         color: var(--color-dark-transparent);
     }
-    100% {
+    100% 
         color: var(--color-dark);
     }
-}
+
 
 .active {
     animation: flash 1s infinite;
