@@ -14,7 +14,7 @@ const mpcTracker = document.querySelector('#mpc'); // money per click
 const upgradesTracker = document.querySelector('#upgrades');
 const upgradeList = document.querySelector('#upgradelist');
 const msgbox = document.querySelector('#msgbox');
-const audioAchievement = document.querySelector('#swoosh');
+const audioAchievement = document.querySelector('#KidHappy');
 
 /* Följande variabler använder vi för att hålla reda på hur mycket pengar som
  * spelaren, har och tjänar.
@@ -76,6 +76,11 @@ clickerButton.addEventListener(
         // håll koll på hur många gånger spelaren klickat
         numberOfClicks += 1;
         // console.log(clicker.score);
+        let audio = new Audio('audio/Untitled song.mp3');
+        audio.play();
+        audio.addEventListener('ended', () => {
+            audio = null;
+        });
     },
     false
 );
